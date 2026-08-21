@@ -83,7 +83,13 @@ class Conversion:
             decimal_a_binario(10) -> "1010"
             decimal_a_binario(255) -> "11111111"
         """
-        pass
+        if decimal == 0:
+            return "0"
+        binario = ""
+        while decimal > 0:
+            binario = str(decimal % 2) + binario
+            decimal //= 2
+        return binario
     
     def binario_a_decimal(self, binario):
         """
