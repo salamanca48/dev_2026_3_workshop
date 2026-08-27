@@ -47,8 +47,14 @@ class Data:
         Returns:
             list: Lista sin elementos duplicados
         """
-        pass
-    
+        resultado = []
+        vistos = []
+        for elemento in lista:
+            clave = (elemento, type(elemento))
+            if clave not in vistos:
+                vistos.append(clave)
+                resultado.append(elemento)
+        return resultado
     def merge_ordenado(self, lista1, lista2):
         """
         Combina dos listas ordenadas en una sola lista ordenada.
